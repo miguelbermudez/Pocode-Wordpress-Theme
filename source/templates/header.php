@@ -6,6 +6,7 @@
 
 	<!-- WordPress -->
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/includes/fonts/fonts.css">
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
