@@ -1,0 +1,88 @@
+/*
+ * Scaffolding
+ * Basic and global styles for generating a grid system, structural layout, and page templates
+ * ------------------------------------------------------------------------------------------- */
+
+
+// STRUCTURAL LAYOUT
+// -----------------
+
+body {
+	background-color: @white;
+    margin: 0;
+    #font > .book(normal, @basefont, @baseline);
+    color: @darkGray;
+}
+
+.container {
+    .fixed-container();
+    border: 1px dashed @magenta;
+}
+
+#slides{
+    position: relative;
+    z-index: 1;
+    #titlebox {
+        background: @ligthGrayBg;
+        bottom:0;
+        height: 50px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        z-index: 10; 
+        p { margin: 0; }
+    }    
+}
+
+#content { margin-top: 35px; }
+
+#story {
+    margin: 0;
+    .makeColumn(2);    
+    
+    section h1 { margin-top: 0; }
+}
+
+#sidebar {
+    .makeColumn(1);
+    h1 { display: inline; }
+}
+
+
+// BASE STYLES
+// -----------
+
+// Links
+a {
+    color: @linkColor;
+    text-decoration: none;
+    line-height: inherit;
+    font-weight: inherit;
+    &:hover {
+        color: @linkColorHover;
+        text-decoration: underline;
+    }
+}
+
+// Quick floats
+.pull-right { float: right; }
+.pull-left { float: left; }
+    
+// Toggling content
+.hide { display: none; }
+.show { display: block; }
+
+// GRID SYSTEM
+// -----------
+// To customize the grid system, bring up the variables.less file and change the column count, size, and gutter there
+
+.row {
+    .clearfix();
+    margin-left: -@gridGutterWidth;
+}
+
+// Find all .span# classes within .row and give them the necessary properties for grid columns (supported by all browsers back to IE7)
+// Credit to @dhg for the idea
+.row > [class*="span"] {
+    .gridColumn();
+}
