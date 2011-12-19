@@ -1,0 +1,113 @@
+/* Patterns.less
+ * Repeatable UI elements outside the base styles provided from the scaffolding
+ * ---------------------------------------------------------------------------- */
+
+
+// NAVIGATION
+// ----------
+
+.blackBackground() {
+    background: @black;
+    color: @white;
+    padding: 0px 10px;
+}
+
+.blackbox {
+    .blackBackground();
+    #font > .bold(16px, 18px);
+    font-weight: normal;
+    letter-spacing: 0.1em;
+    padding: 2px;
+    text-transform: uppercase;
+}
+
+header {
+  height: 108px;
+  margin-top: 20px;
+  width: 100%;
+}
+    
+#logo { float: left; }
+
+#search {
+  display: block;
+  position: relative;
+  height: 19px;
+  
+  button {
+    background: 0;
+    border: none;
+    display: block;
+    height: 16px;
+    left: 0;
+    margin: 0;
+    padding-top: 0;
+    position: absolute;
+    top: 2px;
+  }    
+}
+
+input {
+  #font > .bold( 10px, @baseline);
+  border: 1px solid @black;
+  color: @lightGray;
+  height: 100%;
+  letter-spacing: 0.1em;
+  padding: 0 0 0 20px;
+  text-transform: uppercase;
+  width: 191px;
+  .transition(none);
+
+  // Placeholder text gets special styles; can't be bundled together though for some reason
+  &:-moz-placeholder { color: @lightGray; }
+  &::-webkit-input-placeholder { color: @lightGray; }
+
+  // Focus states (we use .focused since IE8 and down doesn't support :focus)
+  &:focus,
+  &.focused {
+    outline: 0;
+    background-color: @white;
+    color: @darkGray;
+    text-shadow: 0 1px 0 @white;
+  }
+}
+
+.nav {
+  .clearfix();
+  display: block;
+  #font > .bold( 10px, @baseline);
+  float: right;
+  height: 24px;
+  left: 0;
+  letter-spacing: 0.1em;
+  margin: 0 0 0 0;
+  position: relative;
+  text-transform: uppercase;
+
+  > li {
+    display: block;
+    float: left;
+    margin-right: 5px;
+  }
+
+  a {
+    .blackBackground();
+    display: block;
+    float: none;
+    line-height: 16px;
+    padding-top: 4px;
+    text-decoration: none;
+
+    &:hover {
+      background: @lightblue;
+      color: @white;
+      text-decoration: none;
+    }
+  }
+  .active > a {
+    background-color: #222;
+    background-color: rgba(0,0,0,.5);
+  }
+}
+
+
