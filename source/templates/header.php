@@ -33,7 +33,7 @@
                 <li id="forum" class="navbtn"><a href="#forum">forum</a></li>
                 <form id="search" action="" class="pull-right">
                     <input type="text" placeholder="Search">
-                    <button type="submit"> <img src="images/searchicon.png" title="search"></img></button>
+                    <button type="submit"> <img src="/images/searchicon.png" title="search"></img></button>
                 </form>
             </ul>
         </nav>
