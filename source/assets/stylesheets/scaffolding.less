@@ -10,27 +10,62 @@
 body {
 	background-color: @white;
     margin: 0;
-    #font > .book(normal, @basefont, @baseline);
+    #font > .book(16px, @basefont, @baseline);
     color: @darkGray;
 }
 
 .container {
     .fixed-container();
-    border: 1px dashed @magenta;
+    /*border: 1px dashed @magenta;*/ /*debugging*/
 }
 
 #slides{
     position: relative;
     z-index: 1;
     #titlebox {
-        background: @ligthGrayBg;
+        .clearfix();
         bottom:0;
-        height: 50px;
         left: 0;
         position: absolute;
         width: 100%;
         z-index: 10; 
-        p { margin: 0; }
+        .credit {
+            #font > .book(16px);
+            .clearfix();
+            background: @black;
+            color: @magenta;
+            clear: both;
+            float: left;
+            font-variant: small-caps;
+            height: 22px;
+            letter-spacing: 1px;
+            margin: 0;
+            padding: 2px 10px 1px 10px;
+        }
+        .title {
+            #font > .book(28px, 35px);
+            background: @black;
+            color: @white;
+            clear: both;
+            float: left;
+            height: 35px;
+            letter-spacing: 2px;
+            margin: 5px 0 5px 0;
+            padding: 2px 10px 1px 10px;
+            text-transform: uppercase;
+
+        }
+        .descr {
+            #font > .book(16px);
+            background: #b6bab9;
+            color: @white;
+            clear: both;
+            float: left;
+            height: 40px;
+            margin: 0;
+            padding: 5px 10px;
+            p { margin: 0; }    
+        }
     }    
 }
 
@@ -41,11 +76,32 @@ body {
     .makeColumn(2);    
     
     section h1 { margin-top: 0; }
+
+    .columns {
+        -moz-column-count: 2;
+        -moz-column-gap: 20px;
+        -webkit-column-count: 2;
+        -webkit-column-gap: 20px;
+        column-count: 2;
+        column-gap: 20px;
+    }
+
 }
 
 #sidebar {
     .makeColumn(1);
     h1 { display: inline; }
+    p { 
+        margin-top: 14px;
+        margin-bottom: 14px; 
+    }
+}
+
+#download {
+    #font > .bold(16px, @baseline*1.25);
+    color: @magenta;
+    margin: 0;
+    text-transform: uppercase;
 }
 
 

@@ -7,3 +7,46 @@
 
 get_header(); ?>
 
+
+<div id="slides">
+    <!-- <img src="http://placehold.it/952x534" alt="" /> -->
+    <?php echo get_image('feature_image'); ?>
+    <div id="titlebox">
+        <p class="credit"> <?php echo strtolower(get('feature_credit'));?></p>
+        <p class="title"> <?php echo strtolower(get('feature_title'));?></p>
+        <p class="descr"> <?php echo strip_tags(get('feature_excerpt'));?></p>
+    </div> <!-- #titlebox -->
+</div> <!-- #slides -->
+
+<div id="content" class="row">
+    <div id="story">
+        <section>
+            <h1 class="big"><?php echo strip_tags(get('what_is_text'), '<span>'); ?></h1>
+        </section>
+        <section class="columns">
+            <?php echo get('copy'); ?>
+        </section>
+        <hr class="porule" />
+     </div>
+
+     <div id="sidebar">
+	    <section id="start">
+	        <h1 class="blackbox">start coding now</h1>
+            <?php echo get('start_coding_now_copy'); ?>
+	        <p id="download" class="bigbold"><span class="bigarrow ir">&rarr;</span>download</p>
+            <hr class="porule" />
+	    </section>
+	    <section id="feature-tutorial">
+            <h1 class="blackbox">featured tutorials</h1>
+
+            <hr class="porule" />
+        </section>
+        <hr class="porule" />
+	</div> <!-- #sidebar -->
+</div> <!-- #content -->
+
+<div class="clearfix"></div>
+
+<?php 
+
+get_footer(); ?>

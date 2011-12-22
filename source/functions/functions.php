@@ -2,6 +2,12 @@
 
 
 add_action( 'wp_enqueue_scripts', 'pocode_theme_enqueue_scripts' );
+include_once("includes/theme-enqueue.php");
+
+function show_posts_nav() {
+   global $wp_query;
+   return ($wp_query->max_num_pages > 1);
+}
 
 if ( ! function_exists( 'pocode_theme_enqueue_scripts' ) ) :
 
@@ -111,7 +117,7 @@ class MV_Cleaner_Walker_Nav_Menu extends Walker {
 //http://www.mattvarone.com/wordpress/cleaner-output-for-wp_nav_menu/
 function mv_custom_menu_classes($c)
 {
-    $c[] = 'navbtn ir';
+    $c[] = 'navbtn';
     return $c;
 }
 add_filter('nav_menu_css_class','mv_custom_menu_classes');
@@ -150,4 +156,19 @@ add_filter('the_excerpt', 'custom_excerpt');
 $filters = array('pre_term_description', 'pre_link_description', 'pre_link_notes', 'pre_user_description');
 foreach ( $filters as $filter ) {
 	remove_filter($filter, 'wp_filter_kses');
+}
+
+// Add search bar to nav menu 
+// http://www.wprecipes.com/how-to-automatically-add-a-search-field-to-your-navigation-menu
+add_filter('wp_nav_menu_items','add_search_box', 10, 2);
+function add_search_box($items, $args) {
+ 
+        ob_start();
+        get_search_form();
+        $searchform = ob_get_contents();
+        ob_end_clean();
+ 
+        $items .= '<li>' . $searchform . '</li>';
+ 
+    return $items;
 }

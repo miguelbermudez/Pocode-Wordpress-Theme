@@ -2,10 +2,6 @@
  * Repeatable UI elements outside the base styles provided from the scaffolding
  * ---------------------------------------------------------------------------- */
 
-
-// NAVIGATION
-// ----------
-
 .blackBackground() {
     background: @black;
     color: @white;
@@ -21,15 +17,31 @@
     text-transform: uppercase;
 }
 
+
+
+hr.porule { 
+  background: @gray;
+  border: 0;
+  color: @black;
+  height: 1px;
+}
+
 header {
   height: 108px;
+  margin-bottom: 10px;
   margin-top: 20px;
   width: 100%;
 }
     
-#logo { float: left; }
+#logo { 
+  background: url('./images/pocode_sprites.png') -70px -55px;
+  float: left; 
+  height: 108px;
+  margin-bottom: 20px;
+  width: 350px;
+}
 
-#search {
+#search, #searchform {
   display: block;
   position: relative;
   height: 19px;
@@ -39,16 +51,18 @@ header {
     border: none;
     display: block;
     height: 16px;
-    left: 0;
+    left: 5px;
     margin: 0;
     padding-top: 0;
     position: absolute;
-    top: 2px;
+    top: 5px;
   }    
 }
 
 input {
-  #font > .bold( 10px, @baseline);
+  //#font > .bold( 10px);
+  font-family: "FoundrySterlingBold", Helvetica, Arial, sans-serif;
+  font-size: 10px;
   border: 1px solid @black;
   color: @lightGray;
   height: 100%;
@@ -56,7 +70,8 @@ input {
   padding: 0 0 0 20px;
   text-transform: uppercase;
   width: 191px;
-  .transition(none);
+  //.transition(none);
+
 
   // Placeholder text gets special styles; can't be bundled together though for some reason
   &:-moz-placeholder { color: @lightGray; }
@@ -67,9 +82,15 @@ input {
   &.focused {
     outline: 0;
     background-color: @white;
+    border: 1px solid @magenta;
     color: @darkGray;
     text-shadow: 0 1px 0 @white;
   }
+}
+
+img
+{
+  background: url(./images/checker.png);
 }
 
 .nav {
@@ -109,5 +130,3 @@ input {
     background-color: rgba(0,0,0,.5);
   }
 }
-
-
