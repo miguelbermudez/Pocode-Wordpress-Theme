@@ -1,0 +1,74 @@
+/* Gallery.less
+ * Styles for gallery page
+ * ---------------------------------------------------------------------------- */
+
+body.page-template-gallery-php {
+	#content {
+		margin-top: 0;
+	}
+}
+ 
+ .project_item {
+ 	border-bottom: 1px solid @lightGray;
+ 	float: left; 
+ 	margin: 0 35px 35px 0;
+ 	width: 294px; 
+ 	&.last { margin-right: 0; }
+
+ 	#top {
+ 		border-bottom: 1px solid @lightGray;
+ 		display: block;
+ 		padding-bottom: 5px;
+ 	}
+
+ 	#bottom {
+ 		display: block;
+ 		padding-top: 10px;		
+ 		h1 {
+ 			#font > .extrabold(18px, 22px);
+ 			color: @black;
+ 			margin-bottom: 0;
+ 			text-transform: uppercase;
+ 		}
+ 		p.credit {
+ 			color: @magenta;
+ 			font-size: 14px;	
+ 		}
+ 		a.read_more { .read_more; }
+ 	}
+ 	#data_status {
+		display: block;
+		margin-top: 40px;
+		time {
+			color: @black;
+			#font > .bold(10px);
+			float: left;
+			margin-right: 20px;
+		}
+		p {
+			float: left;
+		}
+		.bird_icon {
+			background: url(@spriteUrl) -295px -333px;
+			display: block;
+			margin-right: 12px;
+			height: 17px;
+			width: 24px;
+			&:hover {
+				background-position: -294px -353px;
+				cursor:pointer;cursor:hand;
+			}
+		}
+		.comment_icon {
+			background: url(@spriteUrl) -336px -336px;
+			display: block;
+			height: 15px;
+			width: 23px;
+			&:hover {
+				background-position: -336px -355px;
+				cursor:pointer;cursor:hand
+
+			}
+		}
+	}
+ }

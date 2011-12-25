@@ -10,16 +10,38 @@
   &:after {
     display: table;
     content: "";
-    zoom: 1;
+    
   }
   &:after {
     clear: both;
   }
 }
 
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.read_more {
+  .ir();
+  background: url(@spriteUrl)  -259px -333px;
+  display: inline-block;
+  height: 18px;
+  margin-left: 5px;
+  vertical-align: middle;
+  width: 18px;
+}
+
 //For image replacement
 .ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0; }
 .ir br { display: none; }
+
+.ir() { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0; }
 
 /* Hide from both screenreaders and browsers: h5bp.com/u */
 .hidden { display: none !important; visibility: hidden; }
@@ -92,7 +114,7 @@
   .extrabold(@size: 12px, @lineHeight: 18px) {
       font-family: "FoundrySterlingExtraBold", Helvetica, Arial, sans-serif;
       font-size: @size;
-      font-weight: bold;
+      font-weight: normal;
       line-height: @lineHeight;
   }
   .bold(@size: 12px, @lineHeight: 18px) {

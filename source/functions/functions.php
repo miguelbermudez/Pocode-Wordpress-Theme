@@ -51,6 +51,51 @@ endif; // pocode_theme_setup
 
 
 ################################################################################
+// Pagination
+################################################################################
+
+function potioncode_pagination($pages = '', $range = 2)
+{  
+     $showitems = ($range * 2)+1;  
+
+     global $paged;
+     if(empty($paged)) $paged = 1;
+
+     if($pages == '')
+     {
+         global $wp_query;
+         $pages = $wp_query->max_num_pages;
+         if(!$pages)
+         {
+             $pages = 1;
+         }
+     }   
+
+     if(1 != $pages)
+     {
+         echo "<div class='pagination'>";
+            echo '<div id="pagNumContainer" class="clearfix">'; 
+                 if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<a href='".get_pagenum_link(1)."'>&laquo;</a>";
+                 if($paged > 1 && $showitems < $pages) echo "<a href='".get_pagenum_link($paged - 1)."'>&lsaquo;</a>";
+                    
+                 for ($i=1; $i <= $pages; $i++)
+                 {
+                     if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
+                     {
+                        echo ($paged == $i) ? "<span class='current'>".$i."</span>" : "<a href='".get_pagenum_link($i)."' class='inactive' >".$i."</a>";
+                        //echo "<a href='".get_pagenum_link($i)."' class='inactive' >".$i."</a>";
+                     }
+                 }
+        
+                 if ($paged < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($paged + 1)."'>&rsaquo;</a>";  
+                 if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($pages)."'>&raquo;</a>";
+            echo '</div>';
+         echo "</div>\n";
+     }
+}
+
+
+################################################################################
 // Custom walker
 // for use in getting a cleaner wp_nav menu
 // http://www.mattvarone.com/wordpress/cleaner-output-for-wp_nav_menu
@@ -172,3 +217,44 @@ function add_search_box($items, $args) {
  
     return $items;
 }
+
+
+################################################################################
+// Custom Multiple Excerpts
+// http://wpengineer.com/1909/manage-multiple-excerpt-lengths/
+################################################################################
+
+// 30 word excerpts for gallery posts
+function wpe_excerptlength_gallery($length) {
+    return 30;
+}
+
+// 70 word excerpts for tutorial posts
+function wpe_excerptlength_tutorial($length) {
+    return 70;
+}
+
+function wpe_excerptmore($more) {
+    return '<a class="read_more" href="' . get_permalink($post->ID) . '">✚</a>';
+}
+
+function wpe_excerpt($length_callback='', $more_callback='') {
+    global $post;
+    if(function_exists($length_callback)){
+        add_filter('excerpt_length', $length_callback);
+    }
+    if(function_exists($more_callback)){
+        add_filter('excerpt_more', $more_callback);
+    }
+    $output = get_the_excerpt();
+    $output = apply_filters('wptexturize', $output);
+    $output = apply_filters('convert_chars', $output);
+    $output = '<p>'.$output.'</p>';
+    echo $output;
+}
+
+function new_excerpt_more($more) {
+    global $post;
+    return '<a href="'. get_permalink($post->ID) . '">Read the Rest...</a>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');

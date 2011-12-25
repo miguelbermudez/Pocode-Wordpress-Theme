@@ -15,6 +15,11 @@
 	<!-- WordPress -->
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/includes/fonts/fonts.css">
+
+    <!-- WordPress -->
+    <script type="text/javascript">
+        var disqus_developer = 1; // developer mode is on
+    </script>
 	<?php wp_head(); ?>
 </head>
 
@@ -26,30 +31,16 @@
      ?>
      
 	<div class="container">
-    <header>
-        <div id="logo">
-        </div>
-            <!-- <nav> -->
-            <!-- <ul class="nav">
-                <li id="about" class="navbtn"><a href="#about">about</a></li>
-                <li id="gallery" class="navbtn"><a href="#gallery">gallery</a></li>
-                <li id="learning" class="navbtn"><a href="#learning">learning</a></li>
-                <li id="reference" class="navbtn"><a href="#reference">reference</a></li>
-                <li id="forum" class="navbtn"><a href="#forum">forum</a></li>
-                <form id="search" action="" class="pull-right">
-                    <input type="text" placeholder="SEARCH">
-                    <button type="submit"> <img src="<?php bloginfo('template_directory'); ?>/images/searchicon.png" title="search"></img></button>
-                </form>
-            </ul> -->
-    
+        <header>
+            <div id="logo"></div>    
             <?php wp_nav_menu( array( 
                 'container'     => false, 
                 'menu_class'    => 'nav',
                 'theme_location'=> 'primary',
                 'walker'        => new MV_Cleaner_Walker_Nav_Menu()) ); 
             ?>
-        <!-- </nav> -->
-    </header><!--end header-->
-    <hr class="porule" />
+            <!-- </nav> -->
+        </header><!--end header-->
+        <hr class="porule" />
 
-     <div id="main" role="main">
+        <div id="main" role="main">

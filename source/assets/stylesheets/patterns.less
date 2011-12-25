@@ -17,13 +17,18 @@
     text-transform: uppercase;
 }
 
-
-
 hr.porule { 
   background: @gray;
   border: 0;
   color: @black;
   height: 1px;
+}
+
+h2.blackbox {
+  #font > .bold( 10px, @baseline);
+  height: 21px;
+  margin-bottom: 10px;
+  padding-left: 10px;
 }
 
 header {
@@ -34,7 +39,7 @@ header {
 }
     
 #logo { 
-  background: url('./images/pocode_sprites.png') -70px -55px;
+  background: url(@spriteUrl) -70px -55px;
   float: left; 
   height: 108px;
   margin-bottom: 20px;
@@ -120,6 +125,12 @@ img
     text-decoration: none;
 
     &:hover {
+      background: @lightblue;
+      color: @white;
+      text-decoration: none;
+    }
+
+    &.active {
       background: @lightblue;
       color: @white;
       text-decoration: none;

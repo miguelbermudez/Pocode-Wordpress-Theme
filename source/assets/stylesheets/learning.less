@@ -1,0 +1,62 @@
+/* Learning.less
+ * Styles for learning page
+ * ---------------------------------------------------------------------------- */
+
+body.page-template-learning-php {
+	#content {
+		margin-top: 0;
+	}
+}
+
+.tutorial_item {
+	display: block;
+	border-bottom: 1px solid @lightGray;
+	margin-bottom: 27px;
+	padding-bottom: 27px;
+	position: relative;
+
+	#left {
+		display: block;
+		float: left;
+		margin-right: 20px;
+		height: 261px;
+		width: 464px;
+	}
+	#right {
+		float: left;
+		width: 465px;
+		h1 {
+			#font > .extrabold(18px, 22px);
+			color: @black;
+			margin-bottom: 0;
+			text-transform: uppercase;
+		}
+		a.read_more { .read_more; }
+	}
+	#data_status {
+			display: block;
+			position: absolute;
+			bottom: 15px;
+			right: 0;
+			time {
+				color: @magenta;
+				display: block;
+				float: left;
+				margin-right: 20px;
+			}
+			p {
+				float: left;
+			}
+			.bird_icon {
+				background: url(@spriteUrl) -295px -333px;
+				margin-right: 12px;
+				height: 17px;
+				width: 24px;
+			}
+			.comment_icon {
+				background: url(@spriteUrl) -336px -336px;
+				height: 15px;
+				width: 23px;
+			}
+		}
+}
