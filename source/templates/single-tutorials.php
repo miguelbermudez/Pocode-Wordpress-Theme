@@ -6,13 +6,16 @@
  */
 get_header(); ?>
 
+
 <div id="content" class="row">
-	<h1>
-		<?php 
-			$tutTitle = the_title('','',false); 
-			echo $tutTitle;
-		?>
-	</h1>
-	
-	<?php  echo "<p>by ".get('tutorial_info_credit')."</p>"; ?>	
+	<article>
+		<header>
+			<h1><?php 
+					$tutTitle = the_title('','',false); 
+					echo $tutTitle;
+			?></h1>
+			<?php echo "<p class=\"credit\">".get('tutorial_info_credit')."</p>"; ?>
+		</header>
+			
+	</article>
 </div>

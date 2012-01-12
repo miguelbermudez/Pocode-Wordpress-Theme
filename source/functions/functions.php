@@ -220,6 +220,21 @@ function add_search_box($items, $args) {
 
 
 ################################################################################
+// Add category class to single post pageviews and template files
+// http://codex.wordpress.org/Function_Reference/body_class
+################################################################################
+
+ // add category nicenames in body and post class
+function category_id_class($classes) {
+    global $post;
+    foreach((get_the_category($post->ID)) as $category)
+        $classes[] = $category->category_nicename;
+    return $classes;
+}
+add_filter('post_class', 'category_id_class');
+add_filter('body_class', 'category_id_class');
+
+################################################################################
 // Custom Multiple Excerpts
 // http://wpengineer.com/1909/manage-multiple-excerpt-lengths/
 ################################################################################

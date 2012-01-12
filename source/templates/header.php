@@ -28,11 +28,13 @@
     <?php 
         $homepage = get_page_by_title( 'pocode home' );
         $homepageID = $homepage->ID;
+        $homepage_link = get_permalink($homepageID);
      ?>
      
 	<div class="container">
         <header>
-            <div id="logo"></div>    
+            <!-- <div id="logo"></div> -->
+            <a id="logo" href="<?php echo $homepage_link;?>"></a>
             <?php wp_nav_menu( array( 
                 'container'     => false, 
                 'menu_class'    => 'nav',
