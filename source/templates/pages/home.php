@@ -38,6 +38,18 @@ get_header(); ?>
 	    </section>
 	    <section id="feature-tutorial">
             <h1 class="blackbox">featured tutorials</h1>
+                <?php 
+                    $numOfTutsToGet = get('num_of_tutorials ');
+                    $tutsQuery = new WP_Query(
+                        array(
+                            'category_name' =>  'tutorials',
+                            'orderby'       =>  'meta_value',
+                            'meta_key'      =>  'tutorial_info_date',
+                            'order'         =>  'ASC',
+                            'posts_per_page'=>  $numOfTutsToGet
+                        )
+                    );     
+                ?>
 
             <hr class="porule" />
         </section>

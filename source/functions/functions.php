@@ -234,6 +234,11 @@ function wpe_excerptlength_tutorial($length) {
     return 70;
 }
 
+// 70 word excerpts for tutorial posts
+function wpe_excerptlength_people_blurb($length) {
+    return 10;
+}
+
 function wpe_excerptmore($more) {
     return '<a class="read_more" href="' . get_permalink($post->ID) . '">✚</a>';
 }

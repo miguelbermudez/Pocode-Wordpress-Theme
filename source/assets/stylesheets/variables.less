@@ -26,4 +26,5 @@
 @gridColumns:       3;
 @gridColumnWidth:   294px;
 @gridGutterWidth:   35px;
-@siteWidth:         (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
+@siteWidth:         (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns + 1));
+// this line use to have this: (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
