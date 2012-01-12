@@ -2,3 +2,94 @@
  * Styles for single tutorial post
  * ---------------------------------------------------------------------------- */
 
+body.tutorials {
+	article {
+		header {
+			height: auto;
+			h1 {
+				#font > .extrabold(28px, 22px);
+				color: @black;
+				float: left;
+				span {
+					#font > .book(20px, @basefont, @baseline);
+					color: @magenta;
+					display: block;
+					margin: 0 0 20px 0;
+					letter-spacing: 0.125em;
+					text-transform: uppercase;
+				}
+			}
+			#data_status {
+				float: right;
+				time {
+					color: @magenta;
+					float: left;
+					margin-right: 40px;
+				}
+				p {
+					float: left;
+				}
+				.bird_icon {
+					background: url(@spriteUrl) -295px -333px;
+					display: block;
+					margin-right: 20px;
+					height: 17px;
+					width: 24px;
+					&:hover {
+						background-position: -294px -353px;
+						cursor:pointer;cursor:hand;
+					}
+				}
+				.comment_icon {
+					background: url(@spriteUrl) -336px -336px;
+					display: block;
+					height: 15px;
+					width: 23px;
+					&:hover {
+						background-position: -336px -355px;
+						cursor:pointer;cursor:hand
+					}
+				}
+			} /*END #data_status*/
+		} /*END header */
+	} /*END article */
+} /*END body.tutorials */
+
+#entry {
+
+	.kicker p {
+		font-size: inherit;
+		line-height: inherit;
+		width: 640px;
+	}
+	section {
+		.clearfix();
+		margin-bottom: 1em;
+		h1 {
+			font-size: 14px;
+		}
+		p {
+			float: left;
+			width: 620px;	
+		}
+		.tutImg {
+			border: 1px solid @lightGray;
+			float: left;
+			margin-left: 2em;
+			width: 300px;
+		}
+		.tutImgFull {
+			display: block;
+			margin: 0;
+			overflow: hidden;
+			padding: 40px;
+			width: 620px;
+
+		}
+		.code_container {
+			clear: both;
+			width: 640px;
+		}
+	}
+	
+} /*END #entry*/
