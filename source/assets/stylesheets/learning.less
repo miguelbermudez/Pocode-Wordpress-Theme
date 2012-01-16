@@ -29,9 +29,16 @@ body.page-template-learning-php {
 			#font > .extrabold(18px, 22px);
 			color: @black;
 			margin-bottom: 0;
-			text-transform: uppercase;
+			text-transform: capitalize; 
+			.transition(all 0.2s ease-out);
+
+			&:hover {
+				background: none;
+				color: @magenta;
+				padding: 0;
+			}
 		}
-		a.read_more { .read_more; }
+		/*a.read_more { .read_more; }*/
 	}
 	#data_status {
 			display: block;

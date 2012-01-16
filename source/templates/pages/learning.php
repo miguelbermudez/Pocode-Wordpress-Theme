@@ -43,7 +43,9 @@
 				echo "</div>";
 				
 				echo "<div id=\"right\">";
+					echo "<a href=\"$permalink\" title=\"$tutorialTitle\">";
 					the_title('<h1>', '</h1>');
+					echo "</a>";
 					wpe_excerpt('wpe_excerptlength_tutorial', 'wpe_excerptmore');
 				echo "</div>";
 				

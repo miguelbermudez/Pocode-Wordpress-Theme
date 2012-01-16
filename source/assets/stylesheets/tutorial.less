@@ -53,6 +53,10 @@ body.tutorials {
 			} /*END #data_status*/
 		} /*END header */
 	} /*END article */
+	pre.prettyprint {
+		border: 1px solid @lightGray;
+		box-shadow: none;
+	}
 } /*END body.tutorials */
 
 #entry {
@@ -75,20 +79,31 @@ body.tutorials {
 		.tutImg {
 			border: 1px solid @lightGray;
 			float: left;
+			margin-bottom: 2em;
 			margin-left: 2em;
 			width: 300px;
 		}
 		.tutImgFull {
+			border: 1px solid @lightGray;
 			display: block;
 			margin: 0;
 			overflow: hidden;
-			padding: 40px;
-			width: 620px;
+			width: 550px;
+			img {
+				width: 100%;
+			}
 
 		}
 		.code_container {
 			clear: both;
+			position: relative;
 			width: 640px;
+			p {
+				position: absolute;
+				right: 10px;
+				top: 1px;
+				z-index: 10;
+			}
 		}
 	}
 	

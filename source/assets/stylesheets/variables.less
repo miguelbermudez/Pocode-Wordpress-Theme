@@ -5,15 +5,15 @@
 //Grays
 @black: #000;
 @gray:              lighten(@black, 50%);
-@olddarkGray:       rgb(128, 129, 132);
-@darkGray:			rgb(69, 69, 71);
+@darkGray:       	rgb(128, 129, 132);
+@olddarkGray:		rgb(69, 69, 71);
 @lightGray:         rgb(187, 189, 191);
 @ligthGrayBg:       rgba(128, 129, 132, 0.75);
 @lighterGray:       lighten(@black, 90%);
 @white:             #fff;
 
 //Sprites
-@spriteUrl:			'./images/pocode_sprites_mb.png';
+@spriteUrl:			'./images/pocode_sprites_mb2.png';
 
 //Colors
 @magenta:           rgb(235, 45, 124);
@@ -27,5 +27,5 @@
 @gridColumns:       3;
 @gridColumnWidth:   294px;
 @gridGutterWidth:   35px;
-@siteWidth:         (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns + 1));
+@siteWidth:         (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
 // this line use to have this: (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));

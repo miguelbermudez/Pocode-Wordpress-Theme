@@ -249,9 +249,14 @@ function wpe_excerptlength_tutorial($length) {
     return 70;
 }
 
-// 70 word excerpts for tutorial posts
+// 10 word excerpts for peole blurb
 function wpe_excerptlength_people_blurb($length) {
     return 10;
+}
+
+// 15 word excerpts for feature tutorial text on home page
+function wpe_excerptlength_feat_tutorial($length) {
+    return 15;
 }
 
 function wpe_excerptmore($more) {
@@ -275,6 +280,6 @@ function wpe_excerpt($length_callback='', $more_callback='') {
 
 function new_excerpt_more($more) {
     global $post;
-    return '<a href="'. get_permalink($post->ID) . '">Read the Rest...</a>';
+    return '<a class="readtherest" href="'. get_permalink($post->ID) . '"> more &#8230;</a>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');

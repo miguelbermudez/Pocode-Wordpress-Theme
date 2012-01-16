@@ -48,7 +48,18 @@ get_header(); ?>
                             'order'         =>  'ASC',
                             'posts_per_page'=>  $numOfTutsToGet
                         )
-                    );     
+                    );
+                    if ( $tutsQuery->have_posts() ) : while ( $tutsQuery->have_posts() ) : $tutsQuery->the_post();  
+                        global $more; $more = 0;    //enable more tag for 'the_content()'
+                        echo "<section>";
+                            the_title('<h1>', '</h1>');
+                            wpe_excerpt('wpe_excerptlength_feat_tutorial');
+                        echo "</section>";
+                    endwhile; else:
+                        echo "<p>";
+                            _e('Sorry, no posts matched your criteria.');
+                        echo "</p>";
+                    endif;     
                 ?>
 
             <hr class="porule" />

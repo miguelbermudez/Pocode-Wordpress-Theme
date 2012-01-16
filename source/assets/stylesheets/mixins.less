@@ -30,11 +30,15 @@
 .read_more {
   .ir();
   background: url(@spriteUrl)  -259px -333px;
+  background-color: #FFFFFF;
   display: inline-block;
   height: 18px;
   margin-left: 5px;
   vertical-align: middle;
   width: 18px;
+  &:hover {
+    background-position: -259px -313px;
+  }
 }
 
 //For image replacement
@@ -127,6 +131,18 @@
       font-size: @size;
       font-weight: normal;
       line-height: @lineHeight;
+  }
+  .demi(@size: 12px, @lineHeight: 18px) {
+    font-family: "FoundrySterling-DemiOSF", Helvetica, Arial, sans-serif;
+    font-size: @size;
+    font-weight: normal;
+    line-height: @lineHeight;
+  }
+  .medium(@size: 12px, @lineHeight: 18px) {
+    font-family: "FoundrySterling-Medium", Helvetica, Arial, sans-serif;
+    font-size: @size;
+    font-weight: normal;
+    line-height: @lineHeight;
   }
 }
 

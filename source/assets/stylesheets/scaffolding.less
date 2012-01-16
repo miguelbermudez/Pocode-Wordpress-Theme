@@ -11,7 +11,7 @@ body {
 	background-color: @white;
     margin: 0;
     #font > .book(16px, @basefont, @baseline);
-    color: @darkGray;
+    color: @black;
 }
 
 .container {
@@ -103,6 +103,51 @@ body {
     text-transform: uppercase;
 }
 
+#start {
+    height: 147px;
+    margin-bottom: 33px;
+    margin-top: 17px;
+}
+
+#feature-tutorial {
+    section {
+        margin-top: 20px;
+        h1 {
+            #font > .bold(14px, 18px);
+            font-weight: normal;
+            color: @black !important;
+            margin-bottom: 13px;
+            text-transform: capitalize;
+        }
+        p {
+            margin: 0;   
+        }
+    }
+    .readtherest {
+        #font > .medium(14px, 18px);
+        white-space: nowrap;
+        &:hover {
+
+        }
+    }
+}
+
+body.home #main {
+    a:hover {
+        background-color: @lightblue;
+        padding: 2px;
+    }
+}
+
+footer {
+    a {
+        &:hover {
+            background-color: @lightblue;
+            padding: 2px;
+        }
+    }
+}
+
 
 // BASE STYLES
 // -----------
@@ -113,9 +158,9 @@ a {
     text-decoration: none;
     line-height: inherit;
     font-weight: inherit;
-    &:hover {
-        color: @linkColorHover;
-        text-decoration: underline;
+     &:hover {
+        color: @white;
+        text-decoration: none;
     }
 }
 
