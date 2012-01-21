@@ -9,9 +9,9 @@ $post = $wp_query->post;
 
   if (in_category('tutorials')) {
       include(TEMPLATEPATH.'/single-tutorials.php');
-  } //elseif (in_category('2')) {
-     // include(TEMPLATEPATH.'/single2.php');
-  //} //else {
+  } elseif (in_category('projects')) {
+     include(TEMPLATEPATH.'/single-projects.php');
+  } //else {
       //include(TEMPLATEPATH.'/single_default.php');
   //} 
   

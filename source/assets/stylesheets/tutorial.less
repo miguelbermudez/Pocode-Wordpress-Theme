@@ -61,10 +61,9 @@ body.tutorials {
 
 #entry {
 
-	.kicker p {
-		font-size: inherit;
-		line-height: inherit;
-		width: 640px;
+	p.kicker {
+		margin-bottom: 23px;
+		width: 600px;
 	}
 	section {
 		.clearfix();
@@ -74,7 +73,11 @@ body.tutorials {
 		}
 		p {
 			float: left;
-			width: 620px;	
+			width: 600px;	
+		}
+		strong {
+		    #font > .bold(14px, 22px);
+		    font-weight: normal;
 		}
 		.tutImg {
 			border: 1px solid @lightGray;

@@ -1,6 +1,6 @@
 <?php 
 /**
- * The loop that displays a single tutorial page.
+ * The loop that displays a single projects page.
  *
  * @package PotionCode
  */
@@ -11,14 +11,14 @@ get_header(); ?>
 	<article>
 		<header class="clearfix">
 			<h1><?php 
-					$tutTitle = the_title('','',false); 
-					echo "<span>".get('tutorial_info_credit')."</span>";
-					echo $tutTitle;
+					$projTitle = the_title('','',false); 
+					echo "<span>".get('project_info_credit')."</span>";
+					echo $projTitle;
 			?></h1>
 
 			<div id="data_status" class="clearfix">
 				<?php 
-					$time = strtotime(get('tutorial_info_date'));
+					$time = strtotime(get('project_info_date'));
 					$date = date('m/d/y', $time ); 
 
 					echo "<time class=\"small\">".$date."</time>";
@@ -33,7 +33,7 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 			<div id="entry">
-				<?php remove_filter ('the_content', 'wpautop'); ?>
+				<?php //remove_filter ('the_content', 'wpautop'); ?>
 				<?php the_content();  ?>
 			</div> <!-- #entry -->
 		<?php endwhile; /* rewind or continue if all posts have been fetched */ ?>

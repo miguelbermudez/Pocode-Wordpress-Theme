@@ -8,7 +8,7 @@
 // -----------------
 
 body {
-	background-color: @white;
+    background-color: @white;
     margin: 0;
     #font > .book(16px, @basefont, @baseline);
     color: @black;
@@ -90,7 +90,7 @@ body {
     .makeColumn(1);
     h1 { display: inline; }
     p { 
-        margin-top: 14px;
+        padding-top: 10px;
         margin-bottom: 14px; 
     }
 }
@@ -99,22 +99,31 @@ body {
     #font > .bold(16px, @baseline*1.25);
     color: @magenta;
     margin: 0;
+    padding: 0 !important;
     text-transform: uppercase;
 }
 
 #start {
-    height: 147px;
-    margin-bottom: 33px;
-    margin-top: 17px;
+    height: 170px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 7px;
+    margin-top: 11px;
 }
+    #start > h1.blackbox {
+        margin: 0;
+        position: absolute;
+        top: 0;
+    }
 
 #feature-tutorial {
+    position: relative;
     section {
-        margin-top: 20px;
+
         h1 {
             #font > .bold(14px, 18px);
             font-weight: normal;
-            color: @black !important;
+            color: @black;
             margin-bottom: 13px;
             text-transform: capitalize;
         }
@@ -124,19 +133,43 @@ body {
     }
     .readtherest {
         #font > .medium(14px, 18px);
+        margin-left: 2px;
         white-space: nowrap;
+        .transition(all 0.2s ease-out);
         &:hover {
-
+            background-color: @lightblue;
+            color: @white;
         }
     }
 }
-
-body.home #main {
-    a:hover {
-        background-color: @lightblue;
-        padding: 2px;
-    }
+#feature-tutorial > section {
+    padding-top: 14px;
 }
+
+#feature-tutorial > h1.blackbox {
+    position: absolute;
+    margin: 0;
+    top: 0;
+}
+
+#feature-tutorial h1.blackbox + section {
+    padding-top: 47px;
+    padding-bottom: 0;
+}
+
+a.feature-title {
+    padding: 0;
+    &:hover {
+        background-color: inherit;
+    }
+    h1 {
+        .transition(all 0.2s ease-out);
+        &:hover {
+            background: none;
+            color: @magenta !important;
+        }
+    }
+}    
 
 footer {
     a {

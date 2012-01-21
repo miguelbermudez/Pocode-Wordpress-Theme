@@ -8,15 +8,12 @@
  get_header(); ?>
 
  <div id="content" class="row">
-     <!-- <div id="index" class="clearfix">    
+     <div id="iframe_container">
+         <iframe scrolling="no" id="ref_iframe" src="http://localhost:8888/web/pocode/docs/poObject.h.html" width="952" >
+             <p>Your browser does not support iframes.</p>  
+         </iframe>
      </div>
      
-     <div id="code_content" class="row clearfix">
-     </div> -->
-     
-     <iframe src="http://www.pocode.org/docs/poObject.h.html" width="952" >  
-       <p>Your browser does not support iframes.</p>  
-     </iframe>
 </div>     
         
  

@@ -4,60 +4,65 @@
 
 body.page-template-about-php {
 
-	h2.blackbox {
-		width: (@gridColumnWidth * 1); //don't know why .columns(1) doesn't work
-	}
+    .push {
+        margin-left: 35px !important;
+        width: 292px !important;
+    }
+    
+    #story {
+        display: block;
+        float: none;
+        margin-bottom: 25px;
+        width: 100%;
+        
+        .columns {  
+            .content-columns(3, 40px); 
+            //height: 330px;
+        }
+    }
 
-	#story {
-		display: block;
-		float: none;
-		margin-bottom: 25px;
-		width: 100%;
-		
-		.columns {  
-			.content-columns(3, 35px); 
-			//height: 330px;
-		}
-	}
+    #story > section:first-child {
+        .columns(2);
+    }   
 
-	#story > section:first-child {
-		.columns(2);
-	}	
+    #people {
+        border-bottom: 1px solid @lightGray;
+        display: block;
+        float: left;
+        position: relative;
+        //margin-right: 35px;
+        //width: (@gridColumnWidth * 2); 
+        width: 622px;
 
-	#people {
-		border-bottom: 1px solid @lightGray;
-		display: block;
-		float: left;
-		position: relative;
-		margin-right: 35px;
-		width: (@gridColumnWidth * 2); 
+        h2.blackbox { 
+            //width: ((@gridColumnWidth * 2) - 10);  
+            }
 
-		h2.blackbox { width: ((@gridColumnWidth * 2) - 10);  }
+        #container {
+            dl {
+                .makeColumn(1);
+                .clearfix();
+                overflow: hidden;
+                margin-bottom: 30px;
+                margin-left: 0;
+            }
+            dt {
+                #font > .extrabold(14px, 18px);
+                color: @black;
+                text-transform: uppercase;
+            }
 
-		#container {
-			dl {
-				.makeColumn(1);
-				.clearfix();
-				overflow: hidden;
-				margin-bottom: 30px;
-				margin-left: 0 !important;
-			}
-			dt {
-				#font > .extrabold(14px, 18px);
-				color: @black;
-				text-transform: uppercase;
-			}
+            dd {
+                margin-left: 0;
+                font-size: 14px;
+            }
+        }
+    }
 
-			dd {
-				margin-left: 0;
-				font-size: 14px;
-			}
-		}
-	}
-
-	#contactus {
-		border-bottom: 1px solid @lightGray;
-		float: left;
-		width: (@gridColumnWidth * 1); 
-	}
+    #contactus {
+        border-bottom: 1px solid @lightGray;
+        float: right;
+        //width: (@gridColumnWidth * 1); 
+        width: 292px;
+    }
 }

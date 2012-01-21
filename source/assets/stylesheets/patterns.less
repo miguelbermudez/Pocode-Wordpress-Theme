@@ -5,7 +5,7 @@
 .blackBackground() {
     background: @black;
     color: @white;
-    padding: 0px 10px;
+    padding: 5px 10px;
 }
 
 .blackbox {
@@ -13,7 +13,7 @@
     #font > .medium(16px, 18px);
     font-weight: normal;
     letter-spacing: 0.1em;
-    padding: 7px 7px 3px 7px;
+    padding: 9px 9px 8px 9px;
     text-transform: uppercase;
 }
 
@@ -25,7 +25,7 @@ hr.porule {
 }
 
 h2.blackbox {
-  #font > .bold( 10px, @baseline);
+  #font > .bold( 15px, @baseline);
   height: 21px;
   margin-bottom: 10px;
   padding-left: 10px;
@@ -39,7 +39,7 @@ header {
 }
     
 #logo { 
-  background: url(@spriteUrl) -70px -55px;
+  background: url(@spriteUrl) -70px -56px;
   float: left; 
   height: 108px;
   margin-bottom: 20px;
@@ -99,7 +99,6 @@ img
 }
 
 .nav {
-  .clearfix();
   display: block;
   #font > .bold( 10px, @baseline);
   float: right;
@@ -113,16 +112,17 @@ img
   > li {
     display: block;
     float: left;
-    margin-right: 5px;
+    margin-left: 5px;
   }
 
   a {
     .blackBackground();
     display: block;
     float: none;
-    line-height: 16px;
-    padding-top: 4px;
+    line-height: 10px;
+    padding-top: 6px;
     text-decoration: none;
+    .transition(all 0.2s ease-out);
 
     &:hover {
       background: @lightblue;

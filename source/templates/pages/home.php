@@ -30,13 +30,13 @@ get_header(); ?>
      </div>
 
      <div id="sidebar">
-	    <section id="start">
-	        <h1 class="blackbox">start coding now</h1>
+        <section id="start">
+            <h1 class="blackbox">start coding now</h1>
             <?php echo get('start_coding_now_copy'); ?>
-	        <p id="download" class="bigbold"><span class="bigarrow ir">&rarr;</span>download</p>
+            <p id="download" class="bigbold"><span class="bigarrow ir">&rarr;</span>download</p>
             <hr class="porule" />
-	    </section>
-	    <section id="feature-tutorial">
+        </section>
+        <section id="feature-tutorial">
             <h1 class="blackbox">featured tutorials</h1>
                 <?php 
                     $numOfTutsToGet = get('num_of_tutorials ');
@@ -51,8 +51,13 @@ get_header(); ?>
                     );
                     if ( $tutsQuery->have_posts() ) : while ( $tutsQuery->have_posts() ) : $tutsQuery->the_post();  
                         global $more; $more = 0;    //enable more tag for 'the_content()'
+                        $permalink     = get_permalink();
+                        $tutorialTitle = the_title('', '', false);
+                        
                         echo "<section>";
-                            the_title('<h1>', '</h1>');
+                            echo "<a class=\"feature-title\" href=\"$permalink\" title=\"$tutorialTitle\">";
+                                the_title('<h1>', '</h1>');
+                            echo "</a>";
                             wpe_excerpt('wpe_excerptlength_feat_tutorial');
                         echo "</section>";
                     endwhile; else:
@@ -65,7 +70,7 @@ get_header(); ?>
             <hr class="porule" />
         </section>
         <hr class="porule" />
-	</div> <!-- #sidebar -->
+    </div> <!-- #sidebar -->
 </div> <!-- #content -->
 
 <div class="clearfix"></div>
