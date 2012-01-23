@@ -46,7 +46,7 @@ get_header(); ?>
                             'orderby'       =>  'meta_value',
                             'meta_key'      =>  'tutorial_info_date',
                             'order'         =>  'ASC',
-                            'posts_per_page'=>  $numOfTutsToGet
+                            'posts_per_page'=>  3
                         )
                     );
                     if ( $tutsQuery->have_posts() ) : while ( $tutsQuery->have_posts() ) : $tutsQuery->the_post();  
@@ -67,7 +67,7 @@ get_header(); ?>
                     endif;     
                 ?>
 
-            <hr class="porule" />
+            <!-- <hr class="porule" /> -->
         </section>
         <hr class="porule" />
     </div> <!-- #sidebar -->

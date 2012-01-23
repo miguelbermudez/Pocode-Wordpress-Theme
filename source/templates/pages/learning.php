@@ -51,8 +51,8 @@
 				
 				echo "<div id=\"data_status\" class=\"clearfix\">";
 						echo "<time class=\"small\">".$date."</time>";
-						echo "<p><span class=\"bird_icon ir\">twitter</span></p>";
-						echo "<p><span class=\"comment_icon ir\">twitter</span></p>";
+						//echo "<p><span class=\"bird_icon ir\">twitter</span></p>";
+						//echo "<p><span class=\"comment_icon ir\">twitter</span></p>";
 					echo "</div>";
 				echo "<div class=\"clearfix\"></div>";
 

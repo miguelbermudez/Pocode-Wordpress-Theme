@@ -11,7 +11,10 @@ body.page-template-gallery-php {
  .project_item {
     border-bottom: 1px solid @lightGray;
     float: left; 
+    height: 420px;
     margin: 0 35px 35px 0;
+    overflow: hidden;
+    position: relative;
     width: 294px; 
     &.last { margin-right: 0; }
 
@@ -19,11 +22,6 @@ body.page-template-gallery-php {
         border-bottom: 1px solid @lightGray;
         display: block;
         padding-bottom: 5px;
-    }
-
-    #bottom {
-        display: block;
-        padding-top: 10px;      
         h1 {
             #font > .extrabold(18px, 22px);
             color: @black;
@@ -41,9 +39,17 @@ body.page-template-gallery-php {
         }
         a.read_more { .read_more; }
     }
+
+    #bottom {
+        display: block;
+        padding-top: 10px;      
+        
+    }
     #data_status {
+        bottom: 0;
         display: block;
         margin-top: 40px;
+        position: absolute;
         time {
             color: @black;
             #font > .bold(10px);
@@ -60,7 +66,7 @@ body.page-template-gallery-php {
             height: 17px;
             width: 24px;
             &:hover {
-                background-position: -294px -353px;
+                background-position: -294px -314px;
                 cursor:pointer;cursor:hand;
             }
         }
@@ -70,7 +76,7 @@ body.page-template-gallery-php {
             height: 15px;
             width: 23px;
             &:hover {
-                background-position: -336px -355px;
+                background-position: -336px -316px;
                 cursor:pointer;cursor:hand
 
             }

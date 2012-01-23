@@ -22,8 +22,15 @@ get_header(); ?>
 					$date = date('m/d/y', $time ); 
 
 					echo "<time class=\"small\">".$date."</time>";
-					echo "<p><span class=\"bird_icon ir\">twitter</span></p>";
-					echo "<p><span class=\"comment_icon ir\">twitter</span></p>";
+					/*
+					echo "<p>";
+						echo "<span class=\"bird_icon ir\">twitter</span>";
+					echo "</p>";
+					echo "<p>";
+						echo "<span class=\"comment_num\">".$post->comment_count."</span>";
+						echo "<p><span class=\"comment_icon ir\">twitter</span></p>";
+					echo "</p>";
+					*/
 				 ?>
 			</div>
 		</header>

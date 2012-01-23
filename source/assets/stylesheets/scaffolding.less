@@ -12,6 +12,8 @@ body {
     margin: 0;
     #font > .book(16px, @basefont, @baseline);
     color: @black;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
 }
 
 .container {
@@ -90,7 +92,7 @@ body {
     .makeColumn(1);
     h1 { display: inline; }
     p { 
-        padding-top: 10px;
+        padding-top: 40px;
         margin-bottom: 14px; 
     }
 }
@@ -107,7 +109,7 @@ body {
     height: 170px;
     overflow: hidden;
     position: relative;
-    margin-bottom: 7px;
+    margin-bottom: 26px;
     margin-top: 11px;
 }
     #start > h1.blackbox {
@@ -128,7 +130,8 @@ body {
             text-transform: capitalize;
         }
         p {
-            margin: 0;   
+            margin: 0;
+            padding-top: 0;   
         }
     }
     .readtherest {
@@ -153,7 +156,7 @@ body {
 }
 
 #feature-tutorial h1.blackbox + section {
-    padding-top: 47px;
+    padding-top: 43px;
     padding-bottom: 0;
 }
 

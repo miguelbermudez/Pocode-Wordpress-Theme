@@ -57,57 +57,58 @@ body.tutorials {
 		border: 1px solid @lightGray;
 		box-shadow: none;
 	}
+
+	#entry {
+
+		p.kicker {
+			margin-bottom: 23px;
+			width: 600px;
+		}
+		section {
+			.clearfix();
+			margin-bottom: 1em;
+			h1 {
+				font-size: 14px;
+			}
+			p {
+				float: left;
+				width: 600px;	
+			}
+			strong {
+			    #font > .bold(14px, 22px);
+			    font-weight: normal;
+			}
+			.tutImg {
+				border: 1px solid @lightGray;
+				float: left;
+				margin-bottom: 2em;
+				margin-left: 2em;
+				width: 300px;
+			}
+			.tutImgFull {
+				border: 1px solid @lightGray;
+				display: block;
+				margin: 0;
+				overflow: hidden;
+				width: 550px;
+				img {
+					width: 100%;
+				}
+
+			}
+			.code_container {
+				clear: both;
+				position: relative;
+				width: 640px;
+				p {
+					position: absolute;
+					right: 10px;
+					top: 1px;
+					z-index: 10;
+				}
+			}
+		} /*END section*/
+	} /*END #entry*/
 } /*END body.tutorials */
 
-#entry {
 
-	p.kicker {
-		margin-bottom: 23px;
-		width: 600px;
-	}
-	section {
-		.clearfix();
-		margin-bottom: 1em;
-		h1 {
-			font-size: 14px;
-		}
-		p {
-			float: left;
-			width: 600px;	
-		}
-		strong {
-		    #font > .bold(14px, 22px);
-		    font-weight: normal;
-		}
-		.tutImg {
-			border: 1px solid @lightGray;
-			float: left;
-			margin-bottom: 2em;
-			margin-left: 2em;
-			width: 300px;
-		}
-		.tutImgFull {
-			border: 1px solid @lightGray;
-			display: block;
-			margin: 0;
-			overflow: hidden;
-			width: 550px;
-			img {
-				width: 100%;
-			}
-
-		}
-		.code_container {
-			clear: both;
-			position: relative;
-			width: 640px;
-			p {
-				position: absolute;
-				right: 10px;
-				top: 1px;
-				z-index: 10;
-			}
-		}
-	}
-	
-} /*END #entry*/

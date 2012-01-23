@@ -38,7 +38,7 @@
      </div><!-- #people -->
 
      <div id="contactus">
-     	<h2 class="blackbox">contactus</h2>
+     	<h2 class="blackbox">contact us</h2>
      		<?php 
      			echo get('contact_copy');
      		 ?>

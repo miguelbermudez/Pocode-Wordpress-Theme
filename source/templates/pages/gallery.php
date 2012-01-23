@@ -46,19 +46,19 @@
                     echo "<a href=\"$permalink\" title=\"$projectTitle\">";
                         echo get_image('project_info_gallery_thumb');
                     echo '</a>';
-                echo "</div>";
-                
-                echo "<div id=\"bottom\">";
                     echo "<a href=\"$permalink\" title=\"$projectTitle\">";
                         the_title('<h1>', '</h1>');
                     echo "</a>";
                     echo "<p class=\"credit\">".get('project_info_credit')."</p>";
+                echo "</div>";
+                
+                echo "<div id=\"bottom\">";
                     wpe_excerpt('wpe_excerptlength_gallery', 'wpe_excerptmore');
                 echo "</div>";
                 echo "<div id=\"data_status\" class=\"clearfix\">";
                         echo "<time class=\"small\">".$date."</time>";
-                        echo "<p><span class=\"bird_icon ir\">twitter</span></p>";
-                        echo "<p><span class=\"comment_icon ir\">twitter</span></p>";
+                        //echo "<p><span class=\"bird_icon ir\">twitter</span></p>";
+                        //echo "<p><span class=\"comment_icon ir\">twitter</span></p>";
                     echo "</div>";
 
             echo "</section>";

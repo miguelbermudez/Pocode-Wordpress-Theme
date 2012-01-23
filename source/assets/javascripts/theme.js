@@ -41,11 +41,7 @@ if( $("body").hasClass("page-template-reference-php") ) {
  * Align "People" Section
  * ---------------------------------------------------------------------------- */
 if ( $("body").hasClass("page-template-about-php") ) {
-    $("#container dl").each(function(index) {
-       if (index % 2) { 
-           $(this).addClass("push");
-       } 
-    });
+    
 }
 
 
