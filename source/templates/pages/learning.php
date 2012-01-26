@@ -24,7 +24,8 @@
 				//'posts_per_page'=>	3
 			)
 		);
-		if ( $tutorialQuery->have_posts() ) : while ( $tutorialQuery->have_posts() ) : $tutorialQuery->the_post();	
+		if ( $tutorialQuery->have_posts() ) : 
+		while ( $tutorialQuery->have_posts() ) : $tutorialQuery->the_post();	
 			global $more; $more = 0;	//enable more tag for 'the_content()'
 			
 			$permalink     = get_permalink();

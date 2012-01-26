@@ -14,7 +14,7 @@ get_header(); ?>
     <div id="titlebox">
         <p class="credit"> <?php echo strtolower(get('feature_credit'));?></p>
         <p class="title"> <?php echo strtolower(get('feature_title'));?></p>
-        <p class="descr"> <?php echo strip_tags(get('feature_excerpt'));?></p>
+        <!-- <p class="descr"> <?php echo strip_tags(get('feature_excerpt'));?></p> -->
     </div> <!-- #titlebox -->
 </div> <!-- #slides -->
 
@@ -26,14 +26,14 @@ get_header(); ?>
         <section class="columns">
             <?php echo get('copy'); ?>
         </section>
-        <hr class="porule" />
+        
      </div>
 
      <div id="sidebar">
         <section id="start">
             <h1 class="blackbox">start coding now</h1>
             <?php echo get('start_coding_now_copy'); ?>
-            <p id="download" class="bigbold"><span class="bigarrow ir">&rarr;</span>download</p>
+            <p id="download_section" class="bigbold"><a href="/web/pocode/wordpress/download/"><span class="bigarrow ir">&rarr;</span>download</a></p>
             <hr class="porule" />
         </section>
         <section id="feature-tutorial">

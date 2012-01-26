@@ -26,30 +26,30 @@ body {
     z-index: 1;
     #titlebox {
         .clearfix();
-        bottom:0;
-        left: 0;
+        bottom: 64px;
+        right: 16px;
         position: absolute;
-        width: 100%;
+        width: 286px;
         z-index: 10; 
         .credit {
-            #font > .medium(22px, 20px);
+            #font > .medium(13px, 20px);
             //.clearfix();
-            background: @magenta;
-            color: @white;
-            clear: both;
-            float: left;
-            height: 30px;
-            margin: 0;
-            padding: 10px 10px 1px 10px;
-            text-transform: uppercase;
-        }
-        .title {
-            #font > .book(28px, 35px);
             background: @black;
             color: @white;
             clear: both;
             float: left;
-            height: 35px;
+            height: 16px;
+            letter-spacing: 1px;
+            margin: 0;
+            padding: 2px 10px 2px 10px;
+            text-transform: uppercase;
+        }
+        .title {
+            #font > .book(28px, 35px);
+            background: @magenta;
+            color: @white;
+            clear: both;
+            float: left;
             letter-spacing: 2px;
             margin: 5px 0 5px 0;
             padding: 2px 10px 1px 10px;
@@ -92,17 +92,25 @@ body {
     .makeColumn(1);
     h1 { display: inline; }
     p { 
+        display: inline-block;
         padding-top: 40px;
         margin-bottom: 14px; 
     }
 }
 
-#download {
+#download_section {
     #font > .bold(16px, @baseline*1.25);
     color: @magenta;
     margin: 0;
     padding: 0 !important;
     text-transform: uppercase;
+    .transition(all 0.2s ease-out); 
+    &:hover { background-color: @lightblue; }
+    a { 
+        .transition(all 0.2s ease-out); 
+        padding: 10px;
+        &:hover { color: @white; }
+    }
 }
 
 #start {
@@ -175,11 +183,22 @@ a.feature-title {
 }    
 
 footer {
+    hr.porule {
+        background: @lightblue;
+        margin-top: 4em;
+    }
     a {
         &:hover {
             background-color: @lightblue;
+            color: @white;
             padding: 2px;
         }
+    }
+    p { 
+        font-size: 18px;
+        font-variant: small-caps;
+        letter-spacing: 2px;
+        margin-top: 1em;
     }
 }
 
@@ -194,7 +213,7 @@ a {
     line-height: inherit;
     font-weight: inherit;
      &:hover {
-        color: @white;
+        //color: @white;
         text-decoration: none;
     }
 }
