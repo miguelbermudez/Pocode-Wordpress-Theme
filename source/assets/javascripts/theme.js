@@ -1,3 +1,19 @@
+/* Home Page
+ * Load Slides.js
+ * ---------------------------------------------------------------------------- */
+if ( $("body").hasClass("home") ) {
+    $("#slides").slides({
+        crossfade         : true,
+        effect            : 'fade',
+        fadeSpeed         : 750,
+        hoverPause        : true,
+        generatePagination: false,
+        play              : 5000,
+        pause             : 2500
+    });
+}
+
+
 /* Reference Page
  * DO an ajax load of specific divs from documenations' html
  * ---------------------------------------------------------------------------- */
@@ -30,18 +46,11 @@ if( $("body").hasClass("page-template-reference-php") ) {
         $("#ref_iframe").contents().find("#index").height(iframe_height);
         //set content height
         $("#ref_iframe").contents().find("#content").height(iframe_height);
-        
-               
-       
-    });
-    
-}
 
-/* About Page
- * Align "People" Section
- * ---------------------------------------------------------------------------- */
-if ( $("body").hasClass("page-template-about-php") ) {
-    
+        //HACK: add in poSimpleDrawing.h into index. 
+        // poSimpleDrawing is a header with only a namespace in it, thus wasn't part of the original class parsing
+        $("#ref_iframe").contents().find("#index ul li").last().after('<li><a href="poSimpleDrawing.h.html">poSimpleDrawing</a></li>');
+    });    
 }
 
 

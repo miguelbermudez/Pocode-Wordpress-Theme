@@ -9,13 +9,44 @@ get_header(); ?>
 
 
 <div id="slides">
-    <!-- <img src="http://placehold.it/952x534" alt="" /> -->
+    <div class="slides_container">
+    <?php 
+        $ProjQueryForSlideshow = new WP_Query(
+            array(
+                'category_name' =>  'projects',
+                'orderby'       =>  'rand',
+                'cat'           => -6,
+                'numberposts'   => 10,
+            )
+        );
+
+         if ( $ProjQueryForSlideshow->have_posts() ) : 
+         while ( $ProjQueryForSlideshow->have_posts() ) : $ProjQueryForSlideshow->the_post();  
+            $permalink = get_permalink();
+            $projTitle = the_title('', '', false);
+             echo '<div class="slides">';
+                 echo '<a href="'.$permalink.'" title="'.$projTitle.'">';
+                    echo get_image('project_info_feature_image');
+                 echo '</a>';
+                 echo '<div id="titlebox">';
+                     echo '<p class="credit">'.strtolower(get('project_info_credit')).'</p>';
+                     echo '<p class="title">'.strtolower($projTitle).'</p>';
+                 echo '</div> <!-- #titlebox -->';
+            echo '</div>';
+                        
+        endwhile; else:
+            
+        endif;  
+        wp_reset_postdata();      
+     ?>
+
     <?php echo get_image('feature_image'); ?>
-    <div id="titlebox">
-        <p class="credit"> <?php echo strtolower(get('feature_credit'));?></p>
-        <p class="title"> <?php echo strtolower(get('feature_title'));?></p>
+    <!-- <div id="titlebox"> -->
+        <!-- <p class="credit"> <?php echo strtolower(get('feature_credit'));?></p> -->
+        <!-- <p class="title"> <?php echo strtolower(get('feature_title'));?></p> -->
         <!-- <p class="descr"> <?php echo strip_tags(get('feature_excerpt'));?></p> -->
-    </div> <!-- #titlebox -->
+    <!-- </div>  -->
+    </div>
 </div> <!-- #slides -->
 
 <div id="content" class="row">
