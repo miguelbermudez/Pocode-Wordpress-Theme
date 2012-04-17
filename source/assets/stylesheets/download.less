@@ -5,14 +5,27 @@
  body.page-template-download-php {
  	section {
 	 	.columns(2);
+        margin-top: 1.5em;
 	 }
 	 #downloads {
 	 	.columns(2);
 	 	h1 {
 	 		#font > .extrabold(18px, 22px);
             color: @black;
-            margin-bottom: 0;
+            margin-bottom: 1em;
+            time {
+            	display: block;
+            	color: #EB2D7C;
+                line-height: 28px;
+            	margin-right: 40px;
+            	font-size: @basefont !important;
+            	font-family: "FoundrySterlingBook" !important;
+            }
 	 	}
+	 	ul {
+	 		font-size: 14px;
+	 	}
+
 	 	.download_link {
 	 		margin: 1em 0;
 	 		a {
